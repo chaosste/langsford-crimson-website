@@ -479,7 +479,6 @@ def build() -> None:
         (
             f'\n        <header class="page-hero">\n'
             f'          <h1 class="page-title">{esc(sections["projects / page"]["meta"]["heading"])}</h1>\n'
-            f'          <p class="page-subtitle">Proposals, reports, and downloadable PDFs</p>\n'
             f"        </header>\n        "
         ),
     )
@@ -498,7 +497,6 @@ def build() -> None:
         (
             f'\n        <header class="page-hero">\n'
             f'          <h1 class="page-title">{esc(sections["blog / page"]["meta"]["heading"])}</h1>\n'
-            f'          <p class="page-subtitle">Research notes — no scrolling through walls of text</p>\n'
             f"        </header>\n        "
         ),
     )
