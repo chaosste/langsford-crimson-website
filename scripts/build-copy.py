@@ -352,7 +352,7 @@ def render_blog_post_page(post: dict, footer_html: str) -> str:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{esc(title)} — IRIS Research Lab</title>
+  <title>{esc(title)} — Albion Research</title>
   <meta name="description" content="{esc(description)}">
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(description)}">
@@ -433,14 +433,11 @@ def build() -> None:
     footer = render_footer(sections["global / footer"])
 
     pages = {
-        "index.html": lambda content: replace_meta(
-            content,
-            sections["index / meta"],
-        ),
-        "iris.html": lambda content: replace_meta(content, sections["iris / meta"]),
-        "projects.html": lambda content: replace_meta(content, sections["projects / meta"]),
-        "blog.html": lambda content: replace_meta(content, sections["blog / meta"]),
-        "contact.html": lambda content: replace_meta(content, sections["contact / meta"]),
+        "index.html": lambda content: replace_meta(content, sections["index / meta"]["meta"]),
+        "iris.html": lambda content: replace_meta(content, sections["iris / meta"]["meta"]),
+        "projects.html": lambda content: replace_meta(content, sections["projects / meta"]["meta"]),
+        "blog.html": lambda content: replace_meta(content, sections["blog / meta"]["meta"]),
+        "contact.html": lambda content: replace_meta(content, sections["contact / meta"]["meta"]),
     }
 
     index = ROOT / "index.html"

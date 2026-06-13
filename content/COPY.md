@@ -1,4 +1,4 @@
-# IRIS Research Lab — Site Copy
+# Albion Research — Site Copy
 
 **Master copy for the live site.** Edit this file, then run:
 
@@ -23,9 +23,9 @@ Lines starting with `@key:` are metadata (titles, URLs, images). Put **one `@key
 
 ## index / meta
 
-@title: IRIS Research Lab — Cognitive Science for Machine Learning
+@title: Albion Research
 @description: AI systems at the intersection of experimental psychology, cognitive science, and applied machine learning. Research lab by Stephen Langsford Beale.
-@og-title: IRIS Research Lab
+@og-title: Albion Research
 @og-description: Cognitive science for machine learning — conscientious AI systems for high-risk domains.
 
 ---
@@ -34,7 +34,7 @@ Lines starting with `@key:` are metadata (titles, URLs, images). Put **one `@key
 
 @heading: Cognitive Science for Machine Learning
 @heading-tag: h1
-@image: assets/images/home-fractal-eye.png
+@image: assets/images/home-cognitive-science.png
 
 I build AI systems at the intersection of experimental psychology, cognitive science, and applied machine learning. I'm currently focussed on novel evaluation and fine-tuning methods that align research riguour with compute capability in areas like AI Theory of Mind.
 
@@ -104,10 +104,10 @@ IRIS is also part of my specialist psychology MSc. research project at the Unive
 
 ## projects / meta
 
-@title: Projects — IRIS Research Lab
-@description: IRIS Research Lab projects — proposals, reports, and downloadable PDFs.
-@og-title: Projects — IRIS Research Lab
-@og-description: Project documents and downloadable PDFs from IRIS Research Lab.
+@title: Projects — Albion Research
+@description: Albion Research projects — proposals, reports, and downloadable PDFs.
+@og-title: Projects — Albion Research
+@og-description: Project documents and downloadable PDFs from Albion Research.
 
 ---
 
@@ -131,9 +131,9 @@ IRIS is also part of my specialist psychology MSc. research project at the Unive
 
 ## blog / meta
 
-@title: Blog — IRIS Research Lab
-@description: Notes on theory of mind, AI evaluation, coordination, and machine learning methodology from IRIS Research Lab.
-@og-title: Blog — IRIS Research Lab
+@title: Blog — Albion Research
+@description: Notes on theory of mind, AI evaluation, coordination, and machine learning methodology from Albion Research.
+@og-title: Blog — Albion Research
 @og-description: Research notes on AI theory of mind, lightweight architectures, and cognitive science for machine learning.
 
 ---
@@ -159,9 +159,9 @@ IRIS is also part of my specialist psychology MSc. research project at the Unive
 
 ## contact / meta
 
-@title: Contact — IRIS Research Lab
+@title: Contact — Albion Research
 @description: Contact Stephen Langsford Beale for consultation, collaboration, and research discussion. Based in Devon, UK.
-@og-title: Contact — IRIS Research Lab
+@og-title: Contact — Albion Research
 @og-description: Available for consultation, collaboration, and research discussion.
 
 ---
