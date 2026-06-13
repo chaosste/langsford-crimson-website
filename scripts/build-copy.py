@@ -147,18 +147,38 @@ def render_home_section(section: dict) -> str:
     image = esc(meta["image"])
     body = esc(section["body"])
     return (
-        f'\n        <section class="home-section">\n'
-        f'          <div class="home-row">\n'
-        f'            <figure class="home-row__media">\n'
-        f'              <img class="home-row__image" src="{image}" alt="" width="400" height="400">\n'
+        f'\n          <article class="retro-card retro-frame">\n'
+        f'            <figure class="retro-card__media">\n'
+        f'              <img class="retro-card__image" src="{image}" alt="" width="400" height="400">\n'
         f"            </figure>\n"
-        f'            <div class="home-row__content">\n'
-        f'              <{tag} class="section-heading">{heading}</{tag}>\n'
-        f'              <p class="body-copy">{body}</p>\n'
-        f"            </div>\n"
-        f"          </div>\n"
-        f"        </section>"
+        f'            <{tag} class="retro-card__title">{heading}</{tag}>\n'
+        f'            <p class="retro-card__body">{body}</p>\n'
+        f"          </article>"
     )
+
+
+def render_project_entries(table: list[list[str]]) -> str:
+    entries = []
+    for index, (title, description, link_text, link_href) in enumerate(table):
+        link_href = normalize_href(link_href)
+        ext = external_link_attrs(link_href)
+        latest = (
+            '            <div class="retro-entry__head">\n'
+            '              <span class="retro-tag">Latest</span>\n'
+            "            </div>\n"
+            if index == 0
+            else ""
+        )
+        entries.append(
+            '          <article class="retro-entry retro-frame">\n'
+            f"{latest}"
+            f'            <h2 class="retro-entry__title">{esc(title)}</h2>\n'
+            f'            <p class="retro-entry__body">{esc(description)}</p>\n'
+            f'            <a class="retro-entry__link" href="{esc(link_href)}"{ext}>{esc(link_text)}</a>\n'
+            "          </article>\n"
+            '          <hr class="pixel-divider">'
+        )
+    return "\n" + "\n".join(entries) + "\n        "
 
 
 def render_iris_links(table: list[list[str]]) -> str:
@@ -193,12 +213,14 @@ def render_blog_posts(table: list[list[str]]) -> str:
     for date, title, excerpt, href in table:
         cards.append(
             '          <article class="blog-card">\n'
+            '            <div class="blog-card-inner retro-frame">\n'
             '            <div class="blog-card-header">\n'
             f'              <h2 class="blog-card-title">{esc(title)}</h2>\n'
             f'              <time class="blog-card-date" datetime="{esc(date)}">{esc(date)}</time>\n'
             "            </div>\n"
             f'            <p class="blog-card-excerpt">{esc(excerpt)}</p>\n'
             f'            <a class="blog-card-link" href="{esc(href)}">Read →</a>\n'
+            "            </div>\n"
             "          </article>"
         )
     return "\n\n" + "\n\n".join(cards) + "\n        "
@@ -335,8 +357,9 @@ def render_blog_post_page(post: dict, footer_html: str) -> str:
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../theme-pixelcastle.css">
 </head>
-<body>
+<body class="theme-pixelcastle">
   <div class="site-wrapper">
     <header class="site-header">
       <div class="container">
@@ -451,12 +474,17 @@ def build() -> None:
     projects_content = replace_marker(
         projects_content,
         "projects/heading",
-        f'\n        <h1 class="page-title">{esc(sections["projects / page"]["meta"]["heading"])}</h1>\n        ',
+        (
+            f'\n        <header class="page-hero">\n'
+            f'          <h1 class="page-title">{esc(sections["projects / page"]["meta"]["heading"])}</h1>\n'
+            f'          <p class="page-subtitle">Proposals, reports, and downloadable PDFs</p>\n'
+            f"        </header>\n        "
+        ),
     )
     projects_content = replace_marker(
         projects_content,
         "projects/rows",
-        render_research_rows(sections["projects / releases"]["table"]),
+        render_project_entries(sections["projects / releases"]["table"]),
     )
     projects.write_text(replace_marker(projects_content, "global/footer", footer), encoding="utf-8")
 
@@ -465,7 +493,12 @@ def build() -> None:
     blog_content = replace_marker(
         blog_content,
         "blog/heading",
-        f'\n        <h1 class="page-title">{esc(sections["blog / page"]["meta"]["heading"])}</h1>\n        ',
+        (
+            f'\n        <header class="page-hero">\n'
+            f'          <h1 class="page-title">{esc(sections["blog / page"]["meta"]["heading"])}</h1>\n'
+            f'          <p class="page-subtitle">Research notes — no scrolling through walls of text</p>\n'
+            f"        </header>\n        "
+        ),
     )
     blog_content = replace_marker(
         blog_content,

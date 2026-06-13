@@ -1,0 +1,463 @@
+/* Pixelcastle retro-tech theme — 8bitcn-inspired overlays */
+
+@font-face {
+  font-family: "Pixelcastle";
+  src: url("fonts/Pixelcastle.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #000000;
+  --text: #f0f0f0;
+  --muted: #8a8a8a;
+  --border: #4a4a4a;
+  --border-light: #7a7a7a;
+  --border-dark: #2a2a2a;
+  --accent: #ffffff;
+  --accent-cyan: #00e5ff;
+  --accent-magenta: #ff3dff;
+  --accent-yellow: #ffe600;
+  --font-display: "Pixelcastle", Georgia, serif;
+}
+
+body {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-yellow);
+}
+
+/* Pixel square dividers */
+
+.pixel-divider {
+  border: none;
+  height: 4px;
+  margin: 0;
+  background: repeating-linear-gradient(
+    to right,
+    var(--border-light) 0,
+    var(--border-light) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+}
+
+/* Double-line retro frame */
+
+.retro-frame {
+  position: relative;
+  border: 2px solid var(--border-light);
+  background: var(--bg);
+  box-shadow:
+    inset 0 0 0 2px var(--bg),
+    inset 0 0 0 4px var(--border-dark);
+}
+
+/* Page hero (Help Center / Quick Answers header) */
+
+.page-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0.75rem 0 0;
+}
+
+/* Header / nav */
+
+.site-header {
+  border-bottom: none;
+  padding: 1.5rem 0 1rem;
+}
+
+.site-header .container {
+  border-bottom: none;
+}
+
+.site-nav a {
+  color: var(--muted);
+  letter-spacing: 0.16em;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--text);
+}
+
+.site-nav a[aria-current="page"] {
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent-cyan);
+}
+
+.nav-toggle {
+  border: 2px solid var(--border-light);
+  box-shadow:
+    inset 0 0 0 2px var(--bg),
+    inset 0 0 0 4px var(--border-dark);
+}
+
+/* Typography */
+
+.display-title,
+.page-title,
+.section-heading,
+.blog-card-title,
+.blog-post__title,
+.retro-card__title,
+.retro-entry__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--text);
+}
+
+.page-title {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  margin-bottom: 0;
+}
+
+.section-heading {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  margin-bottom: 0.75rem;
+}
+
+.mono-label {
+  color: var(--muted);
+}
+
+/* Home — Quick Answers grid */
+
+.home-intro {
+  max-width: 36rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.retro-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.retro-card {
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 100%;
+}
+
+.retro-card__media {
+  margin: 0;
+}
+
+.retro-card__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 2px solid var(--border-dark);
+  filter: grayscale(100%) contrast(1.1) brightness(0.85);
+  image-rendering: pixelated;
+}
+
+.retro-card__title {
+  font-size: 1.05rem;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.retro-card__body {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  flex: 1;
+}
+
+.home-section,
+.home-row {
+  display: contents;
+}
+
+/* Projects — Changelog stack */
+
+.retro-changelog {
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.retro-entry {
+  padding: 1.35rem 1.5rem 1.5rem;
+  margin-bottom: 0;
+}
+
+.retro-entry + .pixel-divider {
+  margin: 0;
+}
+
+.retro-entry__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.retro-entry__date {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.retro-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--text);
+  color: var(--bg);
+  background: var(--text);
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+.retro-entry__title {
+  font-size: 1.15rem;
+  margin: 0 0 0.65rem;
+  line-height: 1.35;
+}
+
+.retro-entry__body {
+  margin: 0 0 1rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.retro-entry__link {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.retro-entry__link::after {
+  content: " ↓";
+}
+
+/* Projects accordion fallback / table hide — table removed on retro branch */
+
+/* Blog — retro cards */
+
+.blog-grid {
+  gap: 1.25rem;
+}
+
+.blog-card {
+  border: none;
+  padding: 0;
+}
+
+.blog-card-inner {
+  padding: 1.25rem 1.35rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.blog-card-title {
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.blog-card-excerpt {
+  font-size: 0.8125rem;
+}
+
+.blog-card-link {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Blog post */
+
+.blog-post__tag {
+  border: 2px solid var(--border-light);
+  color: var(--accent-magenta);
+}
+
+.blog-formula {
+  border: 2px solid var(--border-light);
+  box-shadow: inset 0 0 0 2px var(--bg), inset 0 0 0 4px var(--border-dark);
+}
+
+/* IRIS */
+
+body:has(main.iris-page) .site-header {
+  background: var(--bg);
+}
+
+.iris-page::before {
+  opacity: 0.06;
+  filter: grayscale(100%) contrast(1.2);
+}
+
+.iris-panel {
+  max-width: 36rem;
+  margin-inline: auto;
+  padding: 2rem 1.75rem;
+  text-align: center;
+}
+
+.iris-content .display-title {
+  font-size: clamp(1.35rem, 3.5vw, 2rem);
+  color: var(--text);
+}
+
+.iris-links a {
+  color: var(--accent-cyan);
+}
+
+/* Contact */
+
+.contact-block {
+  max-width: 36rem;
+  margin-inline: auto;
+}
+
+.contact-panel {
+  padding: 1.75rem 1.5rem;
+}
+
+.contact-list a {
+  color: var(--accent-cyan);
+}
+
+.contact-credentials {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 1.5rem;
+}
+
+.contact-credentials p {
+  font-size: 0.8125rem;
+}
+
+/* Accordion (Help Center pattern) */
+
+.retro-accordion {
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.retro-accordion__label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 1.75rem 0 0.75rem;
+}
+
+.retro-accordion__label:first-child {
+  margin-top: 0;
+}
+
+.retro-accordion__item {
+  border: none;
+  background: none;
+}
+
+.retro-accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.retro-accordion__trigger:hover {
+  color: var(--accent-cyan);
+}
+
+.retro-accordion__chevron {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  color: var(--muted);
+  transition: transform 0.15s ease;
+}
+
+.retro-accordion__item.is-open .retro-accordion__chevron {
+  transform: rotate(180deg);
+}
+
+.retro-accordion__panel {
+  display: none;
+  padding: 0 0 0.85rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.retro-accordion__item.is-open .retro-accordion__panel {
+  display: block;
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: none;
+  padding-top: 0;
+}
+
+.site-footer::before {
+  content: "";
+  display: block;
+  height: 4px;
+  margin-bottom: 1.5rem;
+  background: repeating-linear-gradient(
+    to right,
+    var(--border-light) 0,
+    var(--border-light) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+}
+
+.footer-inner a:hover {
+  color: var(--accent-yellow);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .retro-grid {
+    grid-template-columns: 1fr;
+  }
+}

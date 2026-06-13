@@ -13,8 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme-pixelcastle.css">
 </head>
-<body>
+<body class="theme-pixelcastle">
   <div class="site-wrapper">
     <!-- shared: header -->
     <header class="site-header">
@@ -31,40 +32,35 @@
     </header>
 
     <main>
-      <div class="container"><!-- copy:index/sections -->
-        <section class="home-section">
-          <div class="home-row">
-            <figure class="home-row__media">
-              <img class="home-row__image" src="assets/images/home-fractal-eye.png" alt="" width="400" height="400">
+      <div class="container">
+        <header class="page-hero">
+          <h1 class="page-title">IRIS Research Lab</h1>
+          <p class="page-subtitle">Cognitive science for machine learning</p>
+        </header>
+
+        <div class="retro-grid"><!-- copy:index/sections -->
+          <article class="retro-card retro-frame">
+            <figure class="retro-card__media">
+              <img class="retro-card__image" src="assets/images/home-fractal-eye.png" alt="" width="400" height="400">
             </figure>
-            <div class="home-row__content">
-              <h1 class="section-heading">Cognitive Science for Machine Learning</h1>
-              <p class="body-copy">I build AI systems at the intersection of experimental psychology, cognitive science, and applied machine learning. I&#x27;m currently focussed on novel evaluation and fine-tuning methods that align research riguour with compute capability in areas like AI Theory of Mind.</p>
-            </div>
-          </div>
-        </section>
-        <section class="home-section">
-          <div class="home-row">
-            <figure class="home-row__media">
-              <img class="home-row__image" src="assets/images/home-fractal-island.png" alt="" width="400" height="400">
+            <h1 class="retro-card__title">Cognitive Science for Machine Learning</h1>
+            <p class="retro-card__body">I build AI systems at the intersection of experimental psychology, cognitive science, and applied machine learning. I&#x27;m currently focussed on novel evaluation and fine-tuning methods that align research riguour with compute capability in areas like AI Theory of Mind.</p>
+          </article>
+          <article class="retro-card retro-frame">
+            <figure class="retro-card__media">
+              <img class="retro-card__image" src="assets/images/home-fractal-island.png" alt="" width="400" height="400">
             </figure>
-            <div class="home-row__content">
-              <h2 class="section-heading">Better Relationships with AI</h2>
-              <p class="body-copy">I want to communicate more meaningfully with AI. I believe that projects can cultivate trust using transparency. I find that collaborative co-creation refines mutual understanding and autonomy between users and systems, offering significant value. Demonstrations include conscientious systems for high-risk domains, and increasing access to specialist health insight.</p>
-            </div>
-          </div>
-        </section>
-        <section class="home-section">
-          <div class="home-row">
-            <figure class="home-row__media">
-              <img class="home-row__image" src="assets/images/home-elite-sq.png" alt="" width="400" height="400">
+            <h2 class="retro-card__title">Better Relationships with AI</h2>
+            <p class="retro-card__body">I want to communicate more meaningfully with AI. I believe that projects can cultivate trust using transparency. I find that collaborative co-creation refines mutual understanding and autonomy between users and systems, offering significant value. Demonstrations include conscientious systems for high-risk domains, and increasing access to specialist health insight.</p>
+          </article>
+          <article class="retro-card retro-frame">
+            <figure class="retro-card__media">
+              <img class="retro-card__image" src="assets/images/home-elite-sq.png" alt="" width="400" height="400">
             </figure>
-            <div class="home-row__content">
-              <h2 class="section-heading">Research Goals</h2>
-              <p class="body-copy">Emerging cultures often inform widespread advancements. I&#x27;m currently researching new high-quality data collection methods for psycho-pharmacological clinical trials, plus how philosophy of mind can provide efficient organisational solutions for multi-agent, multi-stakeholder environments.</p>
-            </div>
-          </div>
-        </section><!-- /copy:index/sections -->
+            <h2 class="retro-card__title">Research Goals</h2>
+            <p class="retro-card__body">Emerging cultures often inform widespread advancements. I&#x27;m currently researching new high-quality data collection methods for psycho-pharmacological clinical trials, plus how philosophy of mind can provide efficient organisational solutions for multi-agent, multi-stakeholder environments.</p>
+          </article><!-- /copy:index/sections -->
+        </div>
       </div>
     </main>
 

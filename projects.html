@@ -13,8 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme-pixelcastle.css">
 </head>
-<body>
+<body class="theme-pixelcastle">
   <div class="site-wrapper">
     <!-- shared: header -->
     <header class="site-header">
@@ -32,37 +33,35 @@
 
     <main>
       <div class="container"><!-- copy:projects/heading -->
-        <h1 class="page-title">Projects</h1>
+        <header class="page-hero">
+          <h1 class="page-title">Projects</h1>
+          <p class="page-subtitle">Proposals, reports, and downloadable PDFs</p>
+        </header>
         <!-- /copy:projects/heading -->
 
-        <div class="table-wrap">
-          <table class="research-table">
-            <thead>
-              <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Description</th>
-                <th scope="col">Download</th>
-              </tr>
-            </thead>
-            <tbody><!-- copy:projects/rows -->
-              <tr>
-                <td>Cognitive AI Liberty</td>
-                <td>Call for ethical, epistemological and ontological diversity</td>
-                <td><a href="assets/pdfs/Cognitive-ai-liberty.pdf">PDF</a></td>
-              </tr>
-              <tr>
-                <td>REBUS-informed artificial Theory of Mind</td>
-                <td>IRIS feasibility study — submitted June 2026</td>
-                <td><a href="assets/pdfs/REBUS-informed%20artifical%20Theory%20of%20Mind.pdf">PDF</a></td>
-              </tr>
-              <tr>
-                <td>From inference to coordination</td>
-                <td>Benchmark spec for context-sensitive social reasoning</td>
-                <td><a href="assets/pdfs/From-inference-to-coordination.pdf">PDF</a></td>
-              </tr>
-            <!-- /copy:projects/rows -->
-            </tbody>
-          </table>
+        <div class="retro-changelog"><!-- copy:projects/rows -->
+          <article class="retro-entry retro-frame">
+            <div class="retro-entry__head">
+              <span class="retro-tag">Latest</span>
+            </div>
+            <h2 class="retro-entry__title">Cognitive AI Liberty</h2>
+            <p class="retro-entry__body">Call for ethical, epistemological and ontological diversity</p>
+            <a class="retro-entry__link" href="assets/pdfs/Cognitive-ai-liberty.pdf">PDF</a>
+          </article>
+          <hr class="pixel-divider">
+          <article class="retro-entry retro-frame">
+            <h2 class="retro-entry__title">REBUS-informed artificial Theory of Mind</h2>
+            <p class="retro-entry__body">IRIS feasibility study — submitted June 2026</p>
+            <a class="retro-entry__link" href="assets/pdfs/REBUS-informed%20artifical%20Theory%20of%20Mind.pdf">PDF</a>
+          </article>
+          <hr class="pixel-divider">
+          <article class="retro-entry retro-frame">
+            <h2 class="retro-entry__title">From inference to coordination</h2>
+            <p class="retro-entry__body">Benchmark spec for context-sensitive social reasoning</p>
+            <a class="retro-entry__link" href="assets/pdfs/From-inference-to-coordination.pdf">PDF</a>
+          </article>
+          <hr class="pixel-divider">
+        <!-- /copy:projects/rows -->
         </div>
       </div>
     </main>

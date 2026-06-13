@@ -50,6 +50,19 @@ Open [http://localhost:8080](http://localhost:8080).
 
 For a custom domain (e.g. `iris-lab.dev`), add a `CNAME` record pointing to `<username>.github.io` and configure the domain in GitHub Pages settings.
 
+## Pixelcastle retro theme (alternate branch)
+
+Branch `design/pixelcastle-retro` adds an 8-bit inspired layout using the **Pixelcastle** display font (`fonts/Pixelcastle.otf`, OFL licensed).
+
+Preview locally on that branch:
+
+```bash
+git checkout design/pixelcastle-retro
+python3 -m http.server 8080
+```
+
+Pages load `styles.css` plus `theme-pixelcastle.css`. Home uses a Quick Answers card grid; Projects uses a Changelog stack; blog cards use double-line retro frames.
+
 ## Deploy to Cloudflare Pages
 
 1. Connect the GitHub repo in Cloudflare Pages, or upload the folder directly.

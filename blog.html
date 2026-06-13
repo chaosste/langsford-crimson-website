@@ -13,8 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme-pixelcastle.css">
 </head>
-<body>
+<body class="theme-pixelcastle">
   <div class="site-wrapper">
     <!-- shared: header -->
     <header class="site-header">
@@ -32,45 +33,56 @@
 
     <main>
       <div class="container"><!-- copy:blog/heading -->
-        <h1 class="page-title">Blog</h1>
+        <header class="page-hero">
+          <h1 class="page-title">Blog</h1>
+          <p class="page-subtitle">Research notes — no scrolling through walls of text</p>
+        </header>
         <!-- /copy:blog/heading -->
 
         <div class="blog-grid"><!-- copy:blog/posts -->
 
           <article class="blog-card">
+            <div class="blog-card-inner retro-frame">
             <div class="blog-card-header">
               <h2 class="blog-card-title">What does it mean for an AI to have a theory of mind?</h2>
               <time class="blog-card-date" datetime="2026-06-11">2026-06-11</time>
             </div>
             <p class="blog-card-excerpt">Notes on the inference-to-coordination gap.</p>
             <a class="blog-card-link" href="blog/what-does-it-mean-for-an-ai-to-have-a-theory-of-mind.html">Read →</a>
+            </div>
           </article>
 
           <article class="blog-card">
+            <div class="blog-card-inner retro-frame">
             <div class="blog-card-header">
               <h2 class="blog-card-title">Sixteen thousand parameters</h2>
               <time class="blog-card-date" datetime="2026-06-11">2026-06-11</time>
             </div>
             <p class="blog-card-excerpt">Why lightweight architectures matter for AI evaluation.</p>
             <a class="blog-card-link" href="blog/sixteen-thousand-parameters.html">Read →</a>
+            </div>
           </article>
 
           <article class="blog-card">
+            <div class="blog-card-inner retro-frame">
             <div class="blog-card-header">
               <h2 class="blog-card-title">The hard pocket problem</h2>
               <time class="blog-card-date" datetime="2026-06-11">2026-06-11</time>
             </div>
             <p class="blog-card-excerpt">When better inference doesn&#x27;t mean better coordination.</p>
             <a class="blog-card-link" href="blog/the-hard-pocket-problem.html">Read →</a>
+            </div>
           </article>
 
           <article class="blog-card">
+            <div class="blog-card-inner retro-frame">
             <div class="blog-card-header">
               <h2 class="blog-card-title">REBUS as a machine learning method</h2>
               <time class="blog-card-date" datetime="2026-06-11">2026-06-11</time>
             </div>
             <p class="blog-card-excerpt">Precision relaxation under uncertainty, from psychedelic science to POMDP agents.</p>
             <a class="blog-card-link" href="blog/rebus-as-a-machine-learning-method.html">Read →</a>
+            </div>
           </article>
         <!-- /copy:blog/posts -->
         </div>
