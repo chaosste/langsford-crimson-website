@@ -7,6 +7,7 @@ import html
 import re
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 COPY_FILE = ROOT / "content" / "COPY.md"
@@ -96,6 +97,13 @@ def external_link_attrs(href: str) -> str:
     return ""
 
 
+def normalize_href(href: str) -> str:
+    href = href.strip().lstrip("/")
+    if href.startswith("http"):
+        return href
+    return "/".join(quote(part, safe="") for part in href.split("/"))
+
+
 def replace_marker(content: str, marker_id: str, replacement: str) -> str:
     pattern = (
         rf"(<!-- copy:{re.escape(marker_id)} -->)"
@@ -168,6 +176,7 @@ def render_iris_links(table: list[list[str]]) -> str:
 def render_research_rows(table: list[list[str]]) -> str:
     rows = []
     for title, description, link_text, link_href in table:
+        link_href = normalize_href(link_href)
         ext = external_link_attrs(link_href)
         rows.append(
             "              <tr>\n"

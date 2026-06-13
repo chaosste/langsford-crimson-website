@@ -120,11 +120,11 @@ IRIS is also part of my specialist psychology MSc. research project at the Unive
 ## projects / releases
 
 
-| title                                 | description                                      | link-text | link-href                                              |
-| ------------------------------------- | ------------------------------------------------ | --------- | ------------------------------------------------------ |
-| Frontier AI Discovery Grant (Theme 4) | IRIS feasibility study — submitted June 2026   | PDF       | assets/pdfs/frontier-ai-discovery-grant-theme-4.pdf    |
-| Baseline Metrics Report               | 5-seed multicomparison at 800 and 140k episodes | PDF       | assets/pdfs/baseline-metrics-report.pdf                |
-| Variant 2: Contextual Right-of-Way    | Benchmark spec for context-sensitive social reasoning | PDF   | assets/pdfs/variant-2-contextual-right-of-way.pdf      |
+| title                                    | description                                                 | link-text | link-href                                                |
+| ---------------------------------------- | ----------------------------------------------------------- | --------- | -------------------------------------------------------- |
+| Cognitive AI Liberty                     | Call for ethical, epistemological and ontological diversity | PDF       | assets/pdfs/Cognitive-ai-liberty.pdf                    |
+| REBUS-informed artificial Theory of Mind | IRIS feasibility study — submitted June 2026                | PDF       | assets/pdfs/REBUS-informed artifical Theory of Mind.pdf |
+| From inference to coordination           | Benchmark spec for context-sensitive social reasoning       | PDF       | assets/pdfs/From-inference-to-coordination.pdf          |
 
 
 ---
@@ -147,12 +147,12 @@ IRIS is also part of my specialist psychology MSc. research project at the Unive
 ## blog / posts
 
 
-| date       | title                                                 | excerpt                                                                           | href |
-| ---------- | ----------------------------------------------------- | --------------------------------------------------------------------------------- | ---- |
+| date       | title                                                 | excerpt                                                                           | href                                                           |
+| ---------- | ----------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------- |
 | 2026-06-11 | What does it mean for an AI to have a theory of mind? | Notes on the inference-to-coordination gap.                                       | blog/what-does-it-mean-for-an-ai-to-have-a-theory-of-mind.html |
-| 2026-06-11 | Sixteen thousand parameters                           | Why lightweight architectures matter for AI evaluation.                           | blog/sixteen-thousand-parameters.html |
-| 2026-06-11 | The hard pocket problem                               | When better inference doesn't mean better coordination.                           | blog/the-hard-pocket-problem.html |
-| 2026-06-11 | REBUS as a machine learning method                    | Precision relaxation under uncertainty, from psychedelic science to POMDP agents. | blog/rebus-as-a-machine-learning-method.html |
+| 2026-06-11 | Sixteen thousand parameters                           | Why lightweight architectures matter for AI evaluation.                           | blog/sixteen-thousand-parameters.html                          |
+| 2026-06-11 | The hard pocket problem                               | When better inference doesn't mean better coordination.                           | blog/the-hard-pocket-problem.html                              |
+| 2026-06-11 | REBUS as a machine learning method                    | Precision relaxation under uncertainty, from psychedelic science to POMDP agents. | blog/rebus-as-a-machine-learning-method.html                   |
 
 
 ---
