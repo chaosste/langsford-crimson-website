@@ -335,7 +335,7 @@ def render_blog_post_page(post: dict, footer_html: str) -> str:
         <nav id="site-nav" class="site-nav" aria-label="Main">
           <a href="../index.html">Home</a>
           <a href="../iris.html">IRIS</a>
-          <a href="../research.html">Research</a>
+          <a href="../projects.html">Projects</a>
           <a href="../blog.html" aria-current="page">Blog</a>
           <a href="../contact.html">Contact</a>
         </nav>
@@ -401,7 +401,7 @@ def build() -> None:
             sections["index / meta"],
         ),
         "iris.html": lambda content: replace_meta(content, sections["iris / meta"]),
-        "research.html": lambda content: replace_meta(content, sections["research / meta"]),
+        "projects.html": lambda content: replace_meta(content, sections["projects / meta"]),
         "blog.html": lambda content: replace_meta(content, sections["blog / meta"]),
         "contact.html": lambda content: replace_meta(content, sections["contact / meta"]),
     }
@@ -437,19 +437,19 @@ def build() -> None:
     )
     iris.write_text(replace_marker(iris_content, "global/footer", footer), encoding="utf-8")
 
-    research = ROOT / "research.html"
-    research_content = pages["research.html"](research.read_text(encoding="utf-8"))
-    research_content = replace_marker(
-        research_content,
-        "research/heading",
-        f'\n        <h1 class="page-title">{esc(sections["research / page"]["meta"]["heading"])}</h1>\n        ',
+    projects = ROOT / "projects.html"
+    projects_content = pages["projects.html"](projects.read_text(encoding="utf-8"))
+    projects_content = replace_marker(
+        projects_content,
+        "projects/heading",
+        f'\n        <h1 class="page-title">{esc(sections["projects / page"]["meta"]["heading"])}</h1>\n        ',
     )
-    research_content = replace_marker(
-        research_content,
-        "research/rows",
-        render_research_rows(sections["research / releases"]["table"]),
+    projects_content = replace_marker(
+        projects_content,
+        "projects/rows",
+        render_research_rows(sections["projects / releases"]["table"]),
     )
-    research.write_text(replace_marker(research_content, "global/footer", footer), encoding="utf-8")
+    projects.write_text(replace_marker(projects_content, "global/footer", footer), encoding="utf-8")
 
     blog = ROOT / "blog.html"
     blog_content = pages["blog.html"](blog.read_text(encoding="utf-8"))

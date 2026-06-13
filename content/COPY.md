@@ -102,31 +102,29 @@ IRIS is also part of my specialist psychology MSc. research project at the Unive
 
 ---
 
-## research / meta
+## projects / meta
 
-@title: Research — IRIS Research Lab
-@description: Curated releases and external-facing research assets from IRIS Research Lab.
-@og-title: Research — IRIS Research Lab
-@og-description: Benchmarks, grants, demos, and reports from IRIS Research Lab.
-
----
-
-## research / page
-
-@heading: Research
+@title: Projects — IRIS Research Lab
+@description: IRIS Research Lab projects — proposals, reports, and downloadable PDFs.
+@og-title: Projects — IRIS Research Lab
+@og-description: Project documents and downloadable PDFs from IRIS Research Lab.
 
 ---
 
-## research / releases
+## projects / page
+
+@heading: Projects
+
+---
+
+## projects / releases
 
 
-| title                                 | description                                                   | link-text   | link-href                                                                                                                      |
-| ------------------------------------- | ------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Frontier AI Discovery Grant (Theme 4) | IRIS feasibility study — submitted June 2026                  | PDF         | #                                                                                                                              |
-| ToMCoordScore Benchmark Suite         | Standardised evaluation protocol for multi-agent coordination | GitHub      | [https://github.com/stephenlangsfordbeale/ToM_AI_Research_Team](https://github.com/stephenlangsfordbeale/ToM_AI_Research_Team) |
-| Variant 2: Contextual Right-of-Way    | Benchmark spec for context-sensitive social reasoning         | Docs        | #                                                                                                                              |
-| Baseline Metrics Report               | 5-seed multicomparison at 800 and 140k episodes               | Modal / PDF | #                                                                                                                              |
-| HuggingFace Interactive Demo          | Run the framework in browser                                  | HF Spaces   | [https://huggingface.co/spaces/chaosste/belief-state-demo](https://huggingface.co/spaces/chaosste/belief-state-demo)           |
+| title                                 | description                                      | link-text | link-href                                              |
+| ------------------------------------- | ------------------------------------------------ | --------- | ------------------------------------------------------ |
+| Frontier AI Discovery Grant (Theme 4) | IRIS feasibility study — submitted June 2026   | PDF       | assets/pdfs/frontier-ai-discovery-grant-theme-4.pdf    |
+| Baseline Metrics Report               | 5-seed multicomparison at 800 and 140k episodes | PDF       | assets/pdfs/baseline-metrics-report.pdf                |
+| Variant 2: Contextual Right-of-Way    | Benchmark spec for context-sensitive social reasoning | PDF   | assets/pdfs/variant-2-contextual-right-of-way.pdf      |
 
 
 ---

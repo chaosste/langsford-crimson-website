@@ -8,7 +8,7 @@ Static website for IRIS Research Lab — cognitive science for machine learning.
 |------|------|
 | Home | `index.html` |
 | IRIS | `iris.html` |
-| Research | `research.html` |
+| Projects | `projects.html` |
 | Blog | `blog.html` |
 | Blog posts | `blog/*.html` (generated) |
 | Contact | `contact.html` |
