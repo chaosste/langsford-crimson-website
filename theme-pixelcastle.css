@@ -22,6 +22,9 @@
   --accent: var(--green);
   --font-display: "Pixelcastle", Georgia, serif;
   --font-redaction: "Redaction 35", Georgia, serif;
+  --iris-accent: #6c5ce7;
+  --iris-accent-teal: #00b894;
+  --iris-accent-soft: #a89bf5;
 }
 
 body {
@@ -135,7 +138,7 @@ a:hover {
 
 .section-heading,
 .retro-card__title,
-.retro-entry__title,
+.changelog-card__title,
 .blog-card-title,
 .blog-post__title {
   font-family: var(--font-mono);
@@ -208,36 +211,71 @@ a:hover {
   display: contents;
 }
 
-/* Projects — Changelog stack */
+/* Projects — Changelog cards (8bit-team2 pattern) */
 
 .retro-changelog {
-  max-width: 40rem;
+  max-width: 42rem;
   margin-inline: auto;
-}
-
-.retro-entry {
-  padding: 1.35rem 1.5rem 1.5rem;
-  margin-bottom: 0;
-}
-
-.retro-entry + .pixel-divider {
-  margin: 0;
-}
-
-.retro-entry__head {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
   gap: 1rem;
-  margin-bottom: 0.85rem;
 }
 
-.retro-entry__date {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.changelog-card {
+  position: relative;
+  padding: 1.25rem 1.35rem 1.35rem;
+}
+
+.changelog-card .retro-tag {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  z-index: 1;
+}
+
+.changelog-card__header {
+  padding-bottom: 0.5rem;
+  padding-right: 4.5rem;
+}
+
+.changelog-card__title {
+  font-size: 0.8125rem;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.changelog-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.changelog-card__description {
+  margin: 0;
+  font-size: 0.8125rem;
   color: var(--muted);
+  line-height: 1.65;
+}
+
+.changelog-card__link {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  align-self: flex-start;
+}
+
+.changelog-card__link:hover {
+  color: var(--green-bright);
+}
+
+.changelog-card__link::after {
+  content: " ↓";
+}
+
+.changelog-separator {
+  margin: 0;
 }
 
 .retro-tag {
@@ -252,35 +290,7 @@ a:hover {
   clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
 }
 
-.retro-entry__title {
-  font-size: 0.8125rem;
-  margin: 0 0 0.65rem;
-  line-height: 1.45;
-}
-
-.retro-entry__body {
-  margin: 0 0 1rem;
-  font-size: 0.8125rem;
-  color: var(--muted);
-}
-
-.retro-entry__link {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--green);
-}
-
-.retro-entry__link:hover {
-  color: var(--green-bright);
-}
-
-.retro-entry__link::after {
-  content: " ↓";
-}
-
-/* Projects accordion fallback / table hide — table removed on retro branch */
+/* Legacy entry aliases removed — projects use changelog-card */
 
 /* Blog — retro cards */
 
@@ -341,15 +351,25 @@ a:hover {
   box-shadow: inset 0 0 0 2px var(--bg), inset 0 0 0 4px var(--border-dark);
 }
 
-/* IRIS — Redaction 35 instead of Pixelcastle */
+/* IRIS — Redaction 35 + main-branch purple accent */
+
+body:has(main.iris-page) .site-nav a:hover,
+body:has(main.iris-page) .site-nav a[aria-current="page"] {
+  color: var(--iris-accent);
+}
+
+body:has(main.iris-page) .site-nav a[aria-current="page"] {
+  border-bottom-color: var(--iris-accent);
+}
 
 body:has(main.iris-page) .site-header {
   background: var(--bg);
 }
 
 .iris-page::before {
-  opacity: 0.06;
-  filter: grayscale(100%) contrast(1.2) hue-rotate(90deg);
+  opacity: 0.08;
+  filter: blur(1px) grayscale(100%);
+  mix-blend-mode: screen;
 }
 
 .iris-panel {
@@ -359,25 +379,44 @@ body:has(main.iris-page) .site-header {
   text-align: center;
 }
 
+body:has(main.iris-page) .iris-panel.retro-frame {
+  border-color: #5544c0;
+  box-shadow:
+    inset 0 0 0 2px var(--bg),
+    inset 0 0 0 4px #3d2f8a;
+}
+
 .iris-content .display-title {
   font-family: var(--font-redaction);
   font-size: clamp(1.35rem, 3.5vw, 2rem);
   font-weight: 400;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--iris-accent);
 }
 
 .iris-content .mono-label {
-  color: var(--green-dim);
+  color: var(--iris-accent-teal);
+}
+
+.iris-content .body-copy {
+  color: #e5e5e5;
 }
 
 .iris-links a {
-  color: var(--green);
+  color: var(--iris-accent);
 }
 
 .iris-links a:hover {
-  color: var(--green-bright);
+  color: var(--iris-accent-soft);
+}
+
+.iris-links a::after {
+  color: var(--muted);
+}
+
+.iris-links a:hover::after {
+  color: var(--iris-accent);
 }
 
 /* Contact */

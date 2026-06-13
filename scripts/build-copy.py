@@ -159,25 +159,30 @@ def render_home_section(section: dict) -> str:
 
 def render_project_entries(table: list[list[str]]) -> str:
     entries = []
+    last_index = len(table) - 1
     for index, (title, description, link_text, link_href) in enumerate(table):
         link_href = normalize_href(link_href)
         ext = external_link_attrs(link_href)
-        latest = (
-            '            <div class="retro-entry__head">\n'
-            '              <span class="retro-tag">Latest</span>\n'
-            "            </div>\n"
+        badge = (
+            '            <span class="retro-tag">Latest</span>\n'
             if index == 0
             else ""
         )
-        entries.append(
-            '          <article class="retro-entry retro-frame">\n'
-            f"{latest}"
-            f'            <h2 class="retro-entry__title">{esc(title)}</h2>\n'
-            f'            <p class="retro-entry__body">{esc(description)}</p>\n'
-            f'            <a class="retro-entry__link" href="{esc(link_href)}"{ext}>{esc(link_text)}</a>\n'
-            "          </article>\n"
-            '          <hr class="pixel-divider">'
+        block = (
+            '          <article class="changelog-card retro-frame">\n'
+            f"{badge}"
+            '            <div class="changelog-card__header">\n'
+            f'              <h2 class="changelog-card__title">{esc(title)}</h2>\n'
+            "            </div>\n"
+            '            <div class="changelog-card__content">\n'
+            f'              <p class="changelog-card__description">{esc(description)}</p>\n'
+            f'              <a class="changelog-card__link" href="{esc(link_href)}"{ext}>{esc(link_text)}</a>\n'
+            "            </div>\n"
+            "          </article>"
         )
+        entries.append(block)
+        if index < last_index:
+            entries.append('          <hr class="pixel-divider changelog-separator">')
     return "\n" + "\n".join(entries) + "\n        "
 
 
