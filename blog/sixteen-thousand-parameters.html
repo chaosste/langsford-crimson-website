@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sixteen Thousand Parameters — IRIS Research Lab</title>
+  <meta name="description" content="The IRIS framework runs at approximately 16,000 parameters. A single GRU cell with 64 hidden units, a belief head, a partner-action prediction head, and a polic">
+  <meta property="og:title" content="Sixteen Thousand Parameters">
+  <meta property="og:description" content="The IRIS framework runs at approximately 16,000 parameters. A single GRU cell with 64 hidden units, a belief head, a partner-action prediction head, and a polic">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="container">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="site-nav" aria-label="Main">
+          <a href="../index.html">Home</a>
+          <a href="../iris.html">IRIS</a>
+          <a href="../research.html">Research</a>
+          <a href="../blog.html" aria-current="page">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <article class="blog-post">
+          <a class="blog-post__back" href="../blog.html">← Blog</a>
+          <header class="blog-post__header">
+            <h1 class="blog-post__title">Sixteen Thousand Parameters</h1>
+            <div class="blog-post__meta">
+              <time datetime="2026-06-11">2026-06-11</time>
+            <ul class="blog-post__tags"><li class="blog-post__tag">architecture</li><li class="blog-post__tag">efficiency</li><li class="blog-post__tag">evaluation</li></ul>
+            </div>
+          </header>
+          <div class="blog-post__body">
+          <p class="body-copy">The IRIS framework runs at approximately 16,000 parameters. A single GRU cell with 64 hidden units, a belief head, a partner-action prediction head, and a policy head — fewer parameters than a single convolutional filter in a production vision model.</p>
+          <p class="body-copy">This is not a limitation. It is a methodological commitment.</p>
+          <p class="body-copy">The current AI evaluation landscape is dominated by benchmarks that require frontier-scale infrastructure to participate. A researcher testing a new coordination architecture must either have access to a GPU cluster or rely on results published by labs that do. This creates a structural bias toward compute-intensive approaches and away from the kinds of questions that can be answered with careful, small-scale experimentation.</p>
+          <p class="body-copy">A 16,000-parameter architecture changes the terms. Training runs complete in hours on consumer hardware. Full experimental sweeps — five seeds, two horizons, multiple conditions — cost pennies in cloud compute. Every result is reproducible on a laptop. Every finding can be challenged, extended, or falsified by any researcher with a PyTorch install and an afternoon.</p>
+          <p class="body-copy">The question the framework is designed to answer — <em>under what conditions does improved inference produce better coordination?</em> — does not require a 70-billion-parameter model. It requires a clean experimental design, a fixed evaluation protocol, and a metric that penalises false safety as heavily as it rewards correct prediction. These are engineering and scientific questions, not scaling questions.</p>
+          <p class="body-copy">Lightweight architectures also surface problems that larger models can mask. The ~0.38 ToMCoordScore ceiling that appears across both benchmark variants is visible <em>because</em> the architecture is small enough that the ceiling cannot be blamed on insufficient capacity. If a 16,000-parameter model plateaus, the plateau is informational or structural, not computational. That is a useful thing to know.</p>
+
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; Stephen Langsford Beale 2026</p>
+        <p class="footer-links">
+          <a href="mailto:steve@langsfordcrimson.com">steve@langsfordcrimson.com</a>
+          <span class="footer-sep">·</span>
+          <a href="https://www.linkedin.com/in/steve-langsford-beale-79773b5/" rel="noopener noreferrer">LinkedIn</a>
+          <span class="footer-sep">·</span>
+          <a href="https://github.com/stephenlangsfordbeale" rel="noopener noreferrer">GitHub</a>
+        </p>
+      
+      </div>
+    </footer>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

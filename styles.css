@@ -229,17 +229,24 @@ main {
 
 /* ── IRIS page ── */
 
+body:has(main.iris-page) .site-header {
+  position: relative;
+  z-index: 2;
+  background: var(--bg);
+}
+
 .iris-page {
   position: relative;
   min-height: calc(100vh - 8rem);
   display: grid;
   place-items: center;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .iris-page::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   background: url("assets/images/iris-bg-blake.png") center / cover no-repeat;
   opacity: 0.08;
@@ -251,13 +258,13 @@ main {
 
 .iris-page::after {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
     var(--bg) 0%,
-    transparent 35%,
-    transparent 65%,
+    transparent 28%,
+    transparent 72%,
     var(--bg) 100%
   );
   pointer-events: none;
@@ -286,6 +293,10 @@ main {
   max-width: none;
   text-align: center;
   margin-inline: auto;
+}
+
+.iris-content .body-copy + .body-copy {
+  margin-top: 1.75rem;
 }
 
 .iris-links {
@@ -420,6 +431,97 @@ main {
   font-size: 0.75rem;
   text-decoration: none;
   align-self: flex-start;
+}
+
+/* ── Blog post (article page) ── */
+
+.blog-post {
+  max-width: 40rem;
+}
+
+.blog-post__back {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+
+.blog-post__back:hover {
+  color: var(--accent);
+}
+
+.blog-post__header {
+  margin-bottom: 2.5rem;
+}
+
+.blog-post__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  line-height: 1.25;
+  margin: 0 0 1rem;
+}
+
+.blog-post__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.blog-post__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blog-post__tag {
+  border: 1px dashed var(--border);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+}
+
+.blog-post__body .body-copy {
+  max-width: none;
+  margin-bottom: 1.25rem;
+}
+
+.blog-post__body .body-copy:last-child {
+  margin-bottom: 0;
+}
+
+.blog-formula {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--border);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.blog-post__body em {
+  font-style: italic;
+  color: var(--text);
 }
 
 /* ── Contact ── */

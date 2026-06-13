@@ -10,7 +10,27 @@ Static website for IRIS Research Lab — cognitive science for machine learning.
 | IRIS | `iris.html` |
 | Research | `research.html` |
 | Blog | `blog.html` |
+| Blog posts | `blog/*.html` (generated) |
 | Contact | `contact.html` |
+
+## Editing site copy
+
+All live copy lives in **[content/COPY.md](content/COPY.md)** and **[content/BLOG_POSTS.md](content/BLOG_POSTS.md)** — edit those files, then sync to HTML:
+
+```bash
+python3 scripts/build-copy.py
+```
+
+See the **static-site-copy** Cursor skill (`~/.cursor/skills/static-site-copy/`) for the full COPY.md format and how to reuse this pattern on other static sites.
+
+**Format:**
+- `## page / section` headings divide content by page
+- `@key: value` lines set metadata (titles, URLs, images)
+- Plain text below metadata is body copy (blank line between paragraphs)
+- Markdown tables hold lists (research releases, blog index, IRIS links)
+- Full blog articles: YAML frontmatter + body in `BLOG_POSTS.md` → `blog/slug.html`
+
+You can edit HTML directly for layout tweaks, but copy changes should go through `COPY.md` / `BLOG_POSTS.md` so nothing drifts out of sync.
 
 ## Local preview
 

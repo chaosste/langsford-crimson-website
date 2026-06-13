@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hard Pocket Problem — IRIS Research Lab</title>
+  <meta name="description" content="The IRIS framework produces a clear, measurable improvement in coordination outcomes — ToMCoordScore rising from 0.11 (baseline) to 0.38 (best candidate at 140k">
+  <meta property="og:title" content="The Hard Pocket Problem">
+  <meta property="og:description" content="The IRIS framework produces a clear, measurable improvement in coordination outcomes — ToMCoordScore rising from 0.11 (baseline) to 0.38 (best candidate at 140k">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="container">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="site-nav" aria-label="Main">
+          <a href="../index.html">Home</a>
+          <a href="../iris.html">IRIS</a>
+          <a href="../research.html">Research</a>
+          <a href="../blog.html" aria-current="page">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <article class="blog-post">
+          <a class="blog-post__back" href="../blog.html">← Blog</a>
+          <header class="blog-post__header">
+            <h1 class="blog-post__title">The Hard Pocket Problem</h1>
+            <div class="blog-post__meta">
+              <time datetime="2026-06-11">2026-06-11</time>
+            <ul class="blog-post__tags"><li class="blog-post__tag">hard-pocket</li><li class="blog-post__tag">coordination</li><li class="blog-post__tag">failure-modes</li></ul>
+            </div>
+          </header>
+          <div class="blog-post__body">
+          <p class="body-copy">The IRIS framework produces a clear, measurable improvement in coordination outcomes — ToMCoordScore rising from 0.11 (baseline) to 0.38 (best candidate at 140k episodes), collision rate dropping from 0.34 to 0.11. These are the headline numbers.</p>
+          <p class="body-copy">What the framework also surfaces — and this is perhaps its more important contribution — is the region where improvement does not happen.</p>
+          <p class="body-copy">Under operational pressure — high urgency, narrow safety margins, throughput-biased norms — the agent&#x27;s policy is pushed toward regretful tradeoffs. It has correctly identified the partner as cooperative, but the situation demands assertiveness. It has correctly identified the partner as assertive, but the situation demands yielding. The belief state is accurate. The context is read correctly. The two conflict, and the agent makes a decision that produces a suboptimal outcome.</p>
+          <p class="body-copy">We call this the <em>hard pocket</em>: a bounded region of the coordination space where better inference does not translate into better outcomes, because the inference and the correct action are in tension.</p>
+          <p class="body-copy">The hard pocket is not a bug. It is an empirical discovery — a measurable operational constraint on what Theory of Mind can achieve in multi-agent coordination under partial observability. It mirrors a recognised problem in agentic AI deployment (Shapira et al., 2026): systems that perform well under standard conditions degrade under the specific combination of time pressure, conflicting demands, and incomplete information.</p>
+          <p class="body-copy">The practical significance is that a well-characterised hard pocket is more useful than an unexamined claim of general coordination ability. An evaluation framework that reports <em>where it does not work</em> alongside <em>where it does</em> enables deployment decisions that account for operational boundaries. The IRIS hard pocket taxonomy — urgency-pressure regime, margin-narrow regime, norm-conflict regime — provides exactly this boundary specification.</p>
+          <p class="body-copy">Phase 1 of the IRIS development roadmap tests whether the hard pocket is architectural (specific to GRU-based learners) or fundamental (an information-theoretic limit on coordination under partial observability). Both outcomes are publishable and practically useful.</p>
+
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; Stephen Langsford Beale 2026</p>
+        <p class="footer-links">
+          <a href="mailto:steve@langsfordcrimson.com">steve@langsfordcrimson.com</a>
+          <span class="footer-sep">·</span>
+          <a href="https://www.linkedin.com/in/steve-langsford-beale-79773b5/" rel="noopener noreferrer">LinkedIn</a>
+          <span class="footer-sep">·</span>
+          <a href="https://github.com/stephenlangsfordbeale" rel="noopener noreferrer">GitHub</a>
+        </p>
+      
+      </div>
+    </footer>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

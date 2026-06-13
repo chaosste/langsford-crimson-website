@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Does It Mean for an AI to Have a Theory of Mind? — IRIS Research Lab</title>
+  <meta name="description" content="Current AI theory of mind research mostly asks one question: can the model predict what another agent will do? Static benchmarks — false-belief tasks, intention">
+  <meta property="og:title" content="What Does It Mean for an AI to Have a Theory of Mind?">
+  <meta property="og:description" content="Current AI theory of mind research mostly asks one question: can the model predict what another agent will do? Static benchmarks — false-belief tasks, intention">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="container">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="site-nav" aria-label="Main">
+          <a href="../index.html">Home</a>
+          <a href="../iris.html">IRIS</a>
+          <a href="../research.html">Research</a>
+          <a href="../blog.html" aria-current="page">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <article class="blog-post">
+          <a class="blog-post__back" href="../blog.html">← Blog</a>
+          <header class="blog-post__header">
+            <h1 class="blog-post__title">What Does It Mean for an AI to Have a Theory of Mind?</h1>
+            <div class="blog-post__meta">
+              <time datetime="2026-06-11">2026-06-11</time>
+            <ul class="blog-post__tags"><li class="blog-post__tag">theory-of-mind</li><li class="blog-post__tag">evaluation</li><li class="blog-post__tag">coordination</li></ul>
+            </div>
+          </header>
+          <div class="blog-post__body">
+          <p class="body-copy">Current AI theory of mind research mostly asks one question: can the model predict what another agent will do? Static benchmarks — false-belief tasks, intention prediction from vignettes — measure inference accuracy in isolation. An agent watches a clip and guesses the next move. Success is a higher F1 score.</p>
+          <p class="body-copy">But prediction is not coordination. An agent that can identify a cooperative partner is not the same as an agent that <em>coordinates better</em> when it has identified one. That gap — between inference and applied coordination — is where the IRIS framework sits.</p>
+          <p class="body-copy">The distinction matters because the failure modes are different. An inference-only agent can achieve high prediction accuracy while pursuing policies that produce worse real outcomes: yielding to every assertive partner regardless of urgency, or committing to cooperative partners who turn out to be opportunistic. It knows <em>who</em> the partner is, but not <em>what to do about it</em>.</p>
+          <p class="body-copy">IRIS measures the bridge. The ToMCoordScore composite weights not just whether the agent identified the partner correctly (F1) but whether that identification improved success rate, reduced collisions, and enabled context-sensitive strategy switching. An agent that predicts perfectly but coordinates poorly scores lower than one that predicts adequately but adapts effectively.</p>
+          <p class="body-copy">This is not a criticism of inference benchmarks — they serve their purpose. But an AI evaluation methodology that stops at &quot;can it guess what happens next?&quot; misses the operational question that matters for deployed systems: <em>does it work better with people in the loop?</em> The inference-to-coordination gap is the research object, not a bug to be engineered around.</p>
+
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; Stephen Langsford Beale 2026</p>
+        <p class="footer-links">
+          <a href="mailto:steve@langsfordcrimson.com">steve@langsfordcrimson.com</a>
+          <span class="footer-sep">·</span>
+          <a href="https://www.linkedin.com/in/steve-langsford-beale-79773b5/" rel="noopener noreferrer">LinkedIn</a>
+          <span class="footer-sep">·</span>
+          <a href="https://github.com/stephenlangsfordbeale" rel="noopener noreferrer">GitHub</a>
+        </p>
+      
+      </div>
+    </footer>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>

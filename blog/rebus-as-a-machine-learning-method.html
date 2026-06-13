@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REBUS as a Machine Learning Method — IRIS Research Lab</title>
+  <meta name="description" content="The REBUS model (Carhart-Harris &amp; Friston, 2019) describes how psychedelics relax the precision-weighting of high-level priors, allowing prediction errors to pr">
+  <meta property="og:title" content="REBUS as a Machine Learning Method">
+  <meta property="og:description" content="The REBUS model (Carhart-Harris &amp; Friston, 2019) describes how psychedelics relax the precision-weighting of high-level priors, allowing prediction errors to pr">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="container">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav" class="site-nav" aria-label="Main">
+          <a href="../index.html">Home</a>
+          <a href="../iris.html">IRIS</a>
+          <a href="../research.html">Research</a>
+          <a href="../blog.html" aria-current="page">Blog</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <article class="blog-post">
+          <a class="blog-post__back" href="../blog.html">← Blog</a>
+          <header class="blog-post__header">
+            <h1 class="blog-post__title">REBUS as a Machine Learning Method</h1>
+            <div class="blog-post__meta">
+              <time datetime="2026-06-11">2026-06-11</time>
+            <ul class="blog-post__tags"><li class="blog-post__tag">rebus</li><li class="blog-post__tag">reinforcement-learning</li><li class="blog-post__tag">belief-updating</li></ul>
+            </div>
+          </header>
+          <div class="blog-post__body">
+          <p class="body-copy">The REBUS model (Carhart-Harris &amp; Friston, 2019) describes how psychedelics relax the precision-weighting of high-level priors, allowing prediction errors to propagate upward and update beliefs faster. It is a theory of belief updating in the brain under uncertainty.</p>
+          <p class="body-copy">It is also a description of a machine learning parameter that can be formalised, implemented, and tested.</p>
+          <p class="body-copy">The IRIS framework uses a GRU-based recurrent belief-state estimator to maintain a distribution over partner types. In the standard configuration, belief update speed is fixed — the learning rate parameter does not change regardless of whether the agent&#x27;s predictions are accurate or wildly wrong. This is computationally efficient but biologically implausible and operationally limiting: an agent that updates its beliefs at the same speed whether it is colliding every episode or sailing through smoothly cannot adapt to regime changes.</p>
+          <p class="body-copy">REBUS suggests a different approach. When prediction errors spike — collisions, unexpected partner switches, persistent deadlock — the precision of existing priors should relax, and the effective learning rate should increase. The agent should update its beliefs <em>faster</em> when it discovers its model of the world is wrong.</p>
+          <p class="body-copy">This is implementable as a dynamic learning rate parameter on the belief logits:</p>
+          <pre class="blog-formula">\alpha_t = \alpha_{base} + k \cdot \sigma(|\text{collision}_t - \text{expected}|)</pre>
+          <p class="body-copy">The prediction error signal — already computed in the training loop as the cross-entropy between the belief state and the true partner type — modulates the confidence with which beliefs are updated. High surprise means high update rate. Low surprise means stable priors.</p>
+          <p class="body-copy">Importantly, the mechanism is general. It does not depend on the presence of any pharmacological agent. It is a formal description of how a system should update its beliefs under uncertainty — applicable whether the system is a biological brain, a POMDP policy, or a multi-agent orchestrator. The psychedelic science provides the mechanistic hypothesis and the empirical parameters (Kanen et al., 2023, measured LSD&#x27;s effect on prediction-error sensitivity in a computational RL model). The IRIS framework provides the testbed.</p>
+          <p class="body-copy">The experimental design compares three conditions: a standard fixed-rate belief update, a REBUS-informed agent with precision-modulated belief update, and a combined condition in which all agents in the environment follow REBUS principles. The question is not whether REBUS works in the brain — it does. The question is whether a REBUS parameterisation of a machine learning belief update produces measurably better coordination outcomes than a fixed-rate alternative.</p>
+
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; Stephen Langsford Beale 2026</p>
+        <p class="footer-links">
+          <a href="mailto:steve@langsfordcrimson.com">steve@langsfordcrimson.com</a>
+          <span class="footer-sep">·</span>
+          <a href="https://www.linkedin.com/in/steve-langsford-beale-79773b5/" rel="noopener noreferrer">LinkedIn</a>
+          <span class="footer-sep">·</span>
+          <a href="https://github.com/stephenlangsfordbeale" rel="noopener noreferrer">GitHub</a>
+        </p>
+      
+      </div>
+    </footer>
+  </div>
+  <script src="../script.js"></script>
+</body>
+</html>
